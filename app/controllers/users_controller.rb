@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
+    @article = @user.articles
+    # raise @article.to_json
   end
 
   # GET /users/new
