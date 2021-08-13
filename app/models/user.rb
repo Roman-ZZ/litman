@@ -3,5 +3,5 @@ class User < ApplicationRecord
   # validates :status, inclusion: {in: [0,1]}
   enum status: [:active, :inactive ]
 
-  has_many: :articles
+  has_many :articles
 end
