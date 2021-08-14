@@ -41,6 +41,12 @@
     <%= form.select :status, User.statuses.map { |e| e.first } %>
   </div>
 
+  <div class="field">
+    <%= form.label :nickname %>
+    <%= form.text_area :nickname %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

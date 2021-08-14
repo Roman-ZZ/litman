@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_08_13_125656) do
 
-  create_table "articles", force: :cascade do |t|
+  create_table "articles", charset: "utf8mb4", force: :cascade do |t|
     t.string "user_id"
     t.string "title"
     t.text "content"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_08_13_125656) do
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "email"
     t.string "password"
     t.string "name"
