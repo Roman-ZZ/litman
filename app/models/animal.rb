@@ -1,9 +1,5 @@
 class Animal < ApplicationRecord
 
-    # response = HTTParty.get('https://axoltlapi.herokuapp.com/ ')
-
-# puts response.body, response.code, response.message, response.headers.inspect
-
   include HTTParty
   
   def self.fetch
@@ -16,6 +12,27 @@ class Animal < ApplicationRecord
       api_repo:response["api_repo"].to_s
       )
     animal.save!
-    # Animal.create([])
   end
+
+  def push_remote
+    body = {
+      body:{
+      url:url,
+      facts:facts,
+      pics_repo:pics_repo,
+      api_repo:api_repo
+        }
+      }
+    # animal = Animal.first
+    # puts url
+    # puts animal.facts
+    # raise animal.to_json
+
+   
+   HTTParty.post('http://requestbin.net/r/3378xohx',body)
+   #  body: { 
+        
+   #  }.to_json,
+   #  )
+ end
 end
